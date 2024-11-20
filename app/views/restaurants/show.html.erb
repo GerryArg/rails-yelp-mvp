@@ -1,2 +1,18 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<!-- app/views/restaurants/show.html.erb -->
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><strong>Category:</strong> <%= @restaurant.category %></p>
+
+  <h2>Reviews</h2>
+  <ul class="list-group">
+    <% @reviews.each do |review| %>
+      <li class="list-group-item">
+        <p><%= review.content %></p>
+        <p><strong>Rating:</strong> <%= review.rating %></p>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Back to restaurants', restaurants_path, class: "btn btn-secondary mt-3" %>
+</div>

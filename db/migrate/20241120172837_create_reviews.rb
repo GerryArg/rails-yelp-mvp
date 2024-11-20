@@ -1,3 +1,5 @@
+# db/migrate/20241120172837_create_reviews.rb
+
 class CreateReviews < ActiveRecord::Migration[7.1]
   def change
     create_table :reviews do |t|
